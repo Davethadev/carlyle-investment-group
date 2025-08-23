@@ -48,7 +48,7 @@ const Hero = () => {
               UNLEASH YOUR IGAMING POTENTIAL
             </span>
             <br />
-            <span className="text-black">WITH AFRICA'S LEADING PARTNER</span>
+            <span className="text-black">WITH AFRICA&apos;S LEADING PARTNER</span>
           </h1>
           <p className="text-black text-base lg:text-lg leading-loose relative z-10">
             At Carlyle, we don&apos;t just drive success for gaming and gambling

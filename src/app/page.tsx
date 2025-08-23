@@ -1,7 +1,7 @@
 
 import Hero from "@/components/Hero";
 import MarketEntry from "@/components/MarketEntry";
-import PowerOfInfluence from "@/components/PowerOfInfluence";
+// import PowerOfInfluence from "@/components/PowerOfInfluence";
 import GameChangingResults from "@/components/GameChangingResults";
 import PaidMedia from "@/components/PaidMedia";
 import CRMRetention from "@/components/CRMRetention";
