@@ -7,7 +7,7 @@ const PowerOfInfluence = () => {
       <h4 className="leading-tight montserrat-black text-xl lg:text-2xl xl:text-3xl">
         Beyond Traditional Marketing
       </h4>
-      <p className="text-black leading-loose">
+      <p className="text-black leading-loose text-base lg:text-lg">
         We connect your brand with authentic voices who speak directly to your
         target audience, creating campaigns that resonate on a personal level
         and drive measurable action.

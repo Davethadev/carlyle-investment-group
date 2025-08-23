@@ -31,9 +31,9 @@ const Hero = () => {
 
   return (
     <section
-      className="h-screen relative"
+      className="h-auto lg:h-screen relative"
       style={{
-        backgroundImage: "url(/assets/images/hero-bg.jpg)",
+        backgroundImage: "url(/assets/images/hero-bg-2.jpg)",
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
@@ -41,32 +41,32 @@ const Hero = () => {
     >
       <div className="bg opacity-85 absolute w-full h-full"></div>
       <Navbar />
-      <div className="p-8 lg:p-16 xl:p-24">
+      <div className="px-8 lg:px-16 xl:px-24 relative top-[20%] py-12 lg:py-0 text-center">
         <div className="max-w-6xl space-y-4">
           <h1 className="text-2xl lg:text-4xl xl:text-5xl leading-tight montserrat-black relative z-10">
             <span className="text-green-700">
-              IGNITE YOUR IGAMING SUCCESS{" "}
-              <span className="text-black">WITH</span>
+              UNLEASH YOUR IGAMING POTENTIAL
             </span>
             <br />
-            <span className="text-black">CARLYLE INVESTMENT</span>
+            <span className="text-black">WITH AFRICA'S LEADING PARTNER</span>
           </h1>
-          <p className="text-black leading-loose relative z-10 w-[90%]">
-            At Carlyle, we don&apos;t just help gaming and gambling brands
-            succeed. We propel them into the heart of emerging markets with
-            powerful localization, bold strategies, and unrivaled marketing
-            expertise.
+          <p className="text-black text-base lg:text-lg leading-loose relative z-10">
+            At Carlyle, we don&apos;t just drive success for gaming and gambling
+            brands. We elevate them at the forefront of Africa&apos;s booming
+            markets. With tailored localization, dynamic strategies, and
+            unmatched marketing expertise, we help your brand thrive where
+            opportunity meets innovation.
           </p>
-          <div className="flex flex-col lg:flex-row items-center justify-start gap-2 relative z-10 pt-8 lg:pt-0">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-2 relative z-10 pt-8 lg:pt-4">
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => scrollToSection("contact")}
               className="bg-black rounded-sm w-44 h-12 font-semibold text-white block hover:cursor-pointer hover:bg-transparent hover:border hover:text-black"
             >
               Get Started
             </button>
 
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("services")}
               className="bg border border-black rounded-sm w-44 h-12 font-semibold text-black block hover:cursor-pointer hover:bg-transparent hover:border-none"
             >
               Explore Services

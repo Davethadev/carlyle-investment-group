@@ -82,7 +82,7 @@ const ContactUsForm = () => {
           name="full_name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-base lg:text-lg">Name</FormLabel>
               <FormControl>
                 <Input placeholder="Full name" {...field} />
               </FormControl>
@@ -96,7 +96,7 @@ const ContactUsForm = () => {
           name="company_name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company name</FormLabel>
+              <FormLabel className="text-base lg:text-lg">Company name</FormLabel>
               <FormControl>
                 <Input placeholder="Company name" {...field} />
               </FormControl>
@@ -110,7 +110,7 @@ const ContactUsForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-base lg:text-lg">Email</FormLabel>
               <FormControl>
                 <Input type="email" placeholder="Email" {...field} />
               </FormControl>
@@ -124,7 +124,7 @@ const ContactUsForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="text-base lg:text-lg">Message</FormLabel>
               <FormControl>
                 <Textarea placeholder="Write your message..." {...field} />
               </FormControl>
@@ -136,7 +136,7 @@ const ContactUsForm = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-24 mx-auto hover:cursor-pointer"
+          className="w-28 h-12 mx-auto hover:cursor-pointer text-base lg:text-lg"
         >
           {isSubmitting ? "Sending..." : "Send"}
         </Button>

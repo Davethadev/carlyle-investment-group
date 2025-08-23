@@ -25,8 +25,8 @@ const MarketResearch = () => {
       className="px-8 lg:px-16 xl:px-24 py-28"
     >
       <div className="relative">
-        <div className="w-full h-auto lg:h-[342px] bg-black absolute top-2 left-2 z-10"></div>
-        <div className="bg h-auto lg:h-[342px] p-8 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
+        <div className="w-full h-auto lg:h-[364px] bg-black absolute top-2 left-2 z-10"></div>
+        <div className="bg h-auto lg:h-[364px] p-8 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
           <h2 className="text-2xl lg:text-3xl xl:text-4xl leading-tight montserrat-black">
             <span className="text-green-700">Intelligence-Driven</span> Market
             Research
@@ -42,7 +42,7 @@ const MarketResearch = () => {
                   <h3 className="text-xl lg:text-2xl leading-tight montserrat-black relative z-20">
                     {title}
                   </h3>
-                  <p className="leading-loose relative z-20">{desc}</p>
+                  <p className="leading-loose relative z-20 text-base lg:text-lg">{desc}</p>
                 </article>
               );
             })}

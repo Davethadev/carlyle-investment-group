@@ -11,7 +11,7 @@ const LocalizedOperations = () => {
     },
     {
       title: "Native Development Teams",
-      desc: "Our local UI/UX, frontend, and backend developers ensure your platform is designed for local preferences, integrating regional payment methods and optimizing for specific market infrastructure. This native approach guarantees an intuitive and seamless experience that resonates deeply with your audience.",
+      desc: "Our local UI/UX, frontend, and backend developers ensure your platform is designed for local preferences, integrating regional payment methods and optimizing for specific market infrastructure. This approach guarantees an intuitive experience that resonates deeply with your audience.",
     },
   ];
 
@@ -25,11 +25,11 @@ const LocalizedOperations = () => {
         {operations.map((operation, index) => {
           const { title, desc } = operation;
           return (
-            <article key={index} className="space-y-4 w-full h-auto lg:h-72 bg">
+            <article key={index} className="space-y-4 w-full h-auto lg:h-[356px] bg">
               <h3 className="text-xl lg:text-2xl leading-tight montserrat-black relative z-20">
                 {title}
               </h3>
-              <p className="leading-loose relative z-20">{desc}</p>
+              <p className="leading-loose relative z-20 text-base lg:text-lg">{desc}</p>
             </article>
           );
         })}

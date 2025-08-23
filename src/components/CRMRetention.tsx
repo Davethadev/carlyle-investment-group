@@ -28,14 +28,14 @@ const CRMRetention = () => {
   return (
     <section
       style={{
-        backgroundImage: "url(/assets/images/crm-retention-bg.jpg)",
+        backgroundImage: "url(/assets/images/crm-retention-bg-2.jpg)",
       }}
       className="px-8 lg:px-16 xl:px-24 py-36"
     >
       <div className="relative">
         <div className="w-full h-auto lg:h-[456px] bg-black absolute top-2 left-2 z-10"></div>
         <div className="bg h-auto lg:h-[456px] p-8 lg:p-12 xl:p-16 mx-auto space-y-2 border border-black rounded-sm relative z-20">
-          <h2 className="text-2xl lg:text-3xl xl:text-4xl leading-tight montserrat-black">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl text-center leading-tight montserrat-black">
             CRM & Retention:{" "}
             <span className="text-green-700">Players Become Advocates</span>
           </h2>
@@ -60,12 +60,12 @@ const CRMRetention = () => {
               return (
                 <article
                   key={index}
-                  className="relative z-20 p-4 space-y-4 w-full h-auto lg:h-52 text-left"
+                  className="relative z-20 p-4 space-y-4 w-full h-auto lg:h-60 text-left"
                 >
                   <h3 className="text-2xl leading-tight montserrat-black relative z-20">
                     {title}
                   </h3>
-                  <p className="leading-loose relative z-20">{desc}</p>
+                  <p className="leading-loose relative z-20 text-base lg:text-lg">{desc}</p>
                 </article>
               );
             })}

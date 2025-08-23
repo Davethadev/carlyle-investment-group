@@ -50,8 +50,7 @@ const ContactUs = () => {
     </>,
     <>
       <span className="font-semibold">Results-Driven Growth</span> - Data fuels
-      every decision. We don&apos;t just promise growth; we deliver it
-      consistently.
+      every decision. We deliver growth consistently.
     </>,
   ];
 
@@ -59,13 +58,13 @@ const ContactUs = () => {
     <>
       <section id="contact" className="p-8 lg:p-16 py-28 bg-green-700">
         <div className="relative">
-          <div className="w-full h-auto lg:h-[740px] bg-black absolute top-2 left-2 z-10"></div>
-          <div className="bg-green-100 h-auto lg:h-[740px] p-6 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
-            <h2 className="text-2xl lg:text-3xl xl:text-4xl leading-tight montserrat-black">
+          <div className="w-full h-auto lg:h-[896px] bg-black absolute top-2 left-2 z-10"></div>
+          <div className="bg-green-100 h-auto lg:h-[896px] p-6 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl text-center leading-tight montserrat-black">
               <span className="text-green-700">Ready to Revolutionize</span>{" "}
               Your Brand?
             </h2>
-            <p className="text-black">
+            <p className="text-black text-base lg:text-lg">
               Let&apos;s start something extraordinary. Contact us today to
               discuss your specific market challenges and growth objectives.
             </p>
@@ -75,7 +74,7 @@ const ContactUs = () => {
                 alt=""
                 width={400}
                 height={400}
-                className="w-auto h-auto"
+                className="w-full max-w-md aspect-square object-cover"
               />
               <div className="space-y-6">
                 <h2 className="text-xl lg:text-2xl montserrat-black">
@@ -85,9 +84,9 @@ const ContactUs = () => {
                   {reasons.map((reason, index) => {
                     return (
                       <div key={index} className="relative">
-                        <div className="absolute bg-black z-10 left-0.5 top-0.5 w-full h-auto lg:h-24 rounded-sm"></div>
-                        <article className="border-2 border-black rounded-sm relative z-20 p-4 space-y-4 w-full h-auto lg:h-24 bg-green-100">
-                          <p className="leading-loose relative z-20">
+                        <div className="absolute bg-black z-10 left-0.5 top-0.5 w-full h-auto lg:h-28 rounded-sm"></div>
+                        <article className="border-2 border-black rounded-sm relative z-20 p-4 space-y-4 w-full h-auto lg:h-28 bg-green-100">
+                          <p className="leading-loose relative z-20 text-base lg:text-lg">
                             {reason}
                           </p>
                         </article>
@@ -95,7 +94,10 @@ const ContactUs = () => {
                     );
                   })}
                 </div>
-                <button onClick={onOpen} className="bg-black rounded-sm w-full lg:w-72 h-12 font-semibold text-white block hover:cursor-pointer hover:bg-transparent hover:border hover:text-black">
+                <button
+                  onClick={onOpen}
+                  className="bg-black rounded-sm w-full lg:w-72 h-12 font-semibold text-white block hover:cursor-pointer hover:bg-transparent hover:border hover:text-black"
+                >
                   Schedule a Consultation
                 </button>
                 <Dialog
@@ -106,7 +108,7 @@ const ContactUs = () => {
                 >
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle className="text-lg">
+                      <DialogTitle className="text-lg lg:text-xl">
                         Send us a message
                       </DialogTitle>
                       <DialogDescription></DialogDescription>
