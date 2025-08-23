@@ -450,7 +450,6 @@
 // };
 
 // export default CarlyleWebsite;
-
 import Hero from "@/components/Hero";
 import MarketEntry from "@/components/MarketEntry";
 import PowerOfInfluence from "@/components/PowerOfInfluence";
@@ -464,22 +463,27 @@ import MarketResearch from "@/components/MarketResearch";
 import Numbers from "@/components/Numbers";
 import ContactUs from "@/components/ContactUs";
 
+import { Toaster } from "@/components/ui/sonner";
+
 const page = () => {
   return (
-    <main className="bg">
-      <Hero />
-      <MarketEntry />
-      <PowerOfInfluence />
-      <GameChangingResults />
-      <PaidMedia />
-      <CRMRetention />
-      <LicensingCompliance />
-      <CulturalStrategy />
-      <LocalizedOperations />
-      <MarketResearch />
-      <Numbers />
-      <ContactUs />
-    </main>
+    <>
+      <Toaster />
+      <main className="bg">
+        <Hero />
+        <MarketEntry />
+        <PowerOfInfluence />
+        <GameChangingResults />
+        <PaidMedia />
+        <CRMRetention />
+        <LicensingCompliance />
+        <CulturalStrategy />
+        <LocalizedOperations />
+        <MarketResearch />
+        <Numbers />
+        <ContactUs />
+      </main>
+    </>
   );
 };
 

@@ -4,8 +4,19 @@ import Image from "next/image";
 import { ArrowUp } from "lucide-react";
 import { useState, useEffect } from "react";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import ContactUsForm from "./ContactUsForm";
+
+import { useDialog } from "@/hooks/useDialog";
 
 const ContactUs = () => {
+  const { isOpen, onOpen, onClose } = useDialog();
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
@@ -84,9 +95,25 @@ const ContactUs = () => {
                     );
                   })}
                 </div>
-                <button className="bg-black rounded-sm w-full lg:w-72 h-12 font-semibold text-white block hover:cursor-pointer hover:bg-transparent hover:border hover:text-black">
+                <button onClick={onOpen} className="bg-black rounded-sm w-full lg:w-72 h-12 font-semibold text-white block hover:cursor-pointer hover:bg-transparent hover:border hover:text-black">
                   Schedule a Consultation
                 </button>
+                <Dialog
+                  open={isOpen}
+                  defaultOpen={isOpen}
+                  onOpenChange={onClose}
+                  modal
+                >
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle className="text-lg">
+                        Send us a message
+                      </DialogTitle>
+                      <DialogDescription></DialogDescription>
+                    </DialogHeader>
+                    <ContactUsForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>

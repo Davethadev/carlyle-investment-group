@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isMobileNav, setIsMobileNav] = useState(false);
@@ -60,30 +61,41 @@ const Navbar = () => {
         </div>
       </nav>
       {/* MOBILE NAV */}
-      {isMobileNav && (
-        <div className="md:hidden w-[90%] mx-auto pt-4 pb-16 px-0 absolute top-16 right-0 left-0 text-center z-20 bg-black h-auto rounded-sm">
-          <button
-            className="md:hidden absolute right-8"
-            onClick={closeMobileNav}
+      <AnimatePresence>
+        {isMobileNav && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { ease: "easeInOut", duration: 0.25, type: "spring" },
+            }}
+            exit={{ opacity: 0, y: 20 }}
+            className="md:hidden w-[90%] mx-auto pt-4 pb-16 px-0 absolute top-16 right-0 left-0 text-center z-20 bg-black h-auto rounded-sm"
           >
-            <X strokeWidth={1.5} color="white" />
-          </button>
-          <a
-            href="#services"
-            onClick={closeMobileNav}
-            className="uppercase montserrat-regular text-white text-sm mt-16 mx-auto text-center block"
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            onClick={closeMobileNav}
-            className="uppercase montserrat-regular text-white text-sm mt-4 mx-auto text-center block"
-          >
-            Contact us
-          </a>
-        </div>
-      )}
+            <button
+              className="md:hidden absolute right-8"
+              onClick={closeMobileNav}
+            >
+              <X strokeWidth={1.5} color="white" />
+            </button>
+            <a
+              href="#services"
+              onClick={closeMobileNav}
+              className="uppercase montserrat-regular text-white text-sm mt-16 mx-auto text-center block"
+            >
+              Services
+            </a>
+            <a
+              href="#contact"
+              onClick={closeMobileNav}
+              className="uppercase montserrat-regular text-white text-sm mt-4 mx-auto text-center block"
+            >
+              Contact us
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
