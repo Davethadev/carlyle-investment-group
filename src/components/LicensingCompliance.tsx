@@ -13,7 +13,7 @@ const LicensingCompliance = () => {
           alt=""
           width={400}
           height={400}
-          className="w-auto h-auto"
+          className="w-full max-w-md aspect-square object-cover"
         />
         <article className="space-y-4">
           <h3 className="text-xl lg:text-2xl leading-tight montserrat-black lg:whitespace-nowrap">

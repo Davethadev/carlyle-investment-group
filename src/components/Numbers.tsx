@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  animate,
-  useInView,
-  AnimationPlaybackControlsWithThen,
-} from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
+import { motion, useMotionValue, animate, useInView, AnimationPlaybackControls } from 'framer-motion';
 
 interface NumbersProps {
   stat: string;
@@ -20,37 +14,42 @@ interface AnimatedStatProps {
   duration: number;
 }
 
-const AnimatedStat = ({ stat, duration = 2.5 }:AnimatedStatProps) => {
+const AnimatedStat = ({ stat, duration = 2.5 }: AnimatedStatProps) => {
   const ref = useRef(null);
   const count = useMotionValue(1);
-  const [displayValue, setDisplayValue] = useState("1");
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
   
   const targetValue = parseInt(stat);
+
+  const [displayValue, setDisplayValue] = useState('1');
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const controlsRef = useRef<AnimationPlaybackControls | null>(null);
   
-  let controls: AnimationPlaybackControlsWithThen;
 
   useEffect(() => {
-    const unsubscribe = count.on("change", (latest) => {
+    const unsubscribe = count.on('change', (latest) => {
       setDisplayValue(Math.round(latest).toString());
     });
 
     if (isInView) {
-      controls = animate(count, targetValue, {
+      controlsRef.current = animate(count, targetValue, { 
         duration,
-        ease: "easeOut",
+        ease: "easeOut"
       });
     }
 
     return () => {
       unsubscribe();
-      if (controls) {
-        controls.stop();
+      if (controlsRef.current) {
+        controlsRef.current.stop();
       }
     };
   }, [count, targetValue, duration, isInView]);
 
-  return <span ref={ref}>{displayValue}+</span>;
+  return (
+    <span ref={ref}>
+      {displayValue}+
+    </span>
+  );
 };
 
 const Numbers = () => {
@@ -84,8 +83,8 @@ const Numbers = () => {
 
   return (
     <section className="py-16 px-8 lg:px-16 xl:px-24 mx-auto space-y-8">
-      <motion.h2
-        className="text-2xl lg:text-3xl xl:text-4xl text-center leading-tight montserrat-black"
+      <motion.h2 
+        className="text-2xl lg:text-3xl xl:text-4xl leading-tight montserrat-black"
         whileInView={{ opacity: [0, 1], y: [30, 0] }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.5 }}
@@ -93,57 +92,57 @@ const Numbers = () => {
         The Numbers That{" "}
         <span className="text-green-700">Speak for Themselves</span>
       </motion.h2>
-
+      
       <div className="space-y-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {numbers.slice(0, 3).map((statistics, index) => {
             const { stat, title, desc } = statistics;
             return (
-              <motion.div
-                key={index}
+              <motion.div 
+                key={index} 
                 className="relative"
-                whileInView={{
-                  opacity: [0, 1],
+                whileInView={{ 
+                  opacity: [0, 1], 
                   y: [50, 0],
-                  scale: [0.9, 1],
+                  scale: [0.9, 1]
                 }}
-                transition={{
-                  duration: 0.6,
+                transition={{ 
+                  duration: 0.6, 
                   delay: index * 0.15,
-                  ease: "easeOut",
+                  ease: "easeOut" 
                 }}
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <div className="absolute bg-green-700 z-10 left-0.5 top-0.5 w-full h-72"></div>
-                <article className="border border-green-700 relative z-20 p-4 space-y-4 w-full h-72 bg">
-                  <motion.p
+                <div className="absolute bg-green-700 z-10 left-0.5 top-0.5 w-full h-64"></div>
+                <article className="border border-green-700 relative z-20 p-4 space-y-4 w-full h-64 bg">
+                  <motion.p 
                     className="text-5xl lg:text-6xl montserrat-black"
                     whileInView={{ opacity: 1 }}
                     initial={{ opacity: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 + 0.3 }}
+                    transition={{ delay: (index * 0.15) + 0.3 }}
                   >
-                    <AnimatedStat stat={stat} duration={2.5 + index * 0.2} />
+                    <AnimatedStat stat={stat} duration={2.5 + (index * 0.2)} />
                   </motion.p>
-
-                  <motion.h3
+                  
+                  <motion.h3 
                     className="text-2xl leading-tight montserrat-black relative z-20"
                     whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.15 + 0.4,
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: (index * 0.15) + 0.4 
                     }}
                     viewport={{ once: true }}
                   >
                     {title}
                   </motion.h3>
-
-                  <motion.p
-                    className="leading-loose relative z-20 text-base lg:text-lg"
+                  
+                  <motion.p 
+                    className="leading-loose relative z-20"
                     whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.15 + 0.5,
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: (index * 0.15) + 0.5 
                     }}
                     viewport={{ once: true }}
                   >
@@ -154,59 +153,56 @@ const Numbers = () => {
             );
           })}
         </div>
-
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {numbers.slice(3, numbers.length).map((statistics, index) => {
             const { stat, title, desc } = statistics;
             return (
-              <motion.div
-                key={index}
+              <motion.div 
+                key={index} 
                 className="relative"
-                whileInView={{
-                  opacity: [0, 1],
+                whileInView={{ 
+                  opacity: [0, 1], 
                   y: [50, 0],
-                  scale: [0.9, 1],
+                  scale: [0.9, 1]
                 }}
-                transition={{
-                  duration: 0.6,
+                transition={{ 
+                  duration: 0.6, 
                   delay: (index + 3) * 0.15,
-                  ease: "easeOut",
+                  ease: "easeOut" 
                 }}
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <div className="absolute bg-green-700 z-10 left-0.5 top-0.5 w-full h-72"></div>
-                <article className="border border-green-700 relative z-20 p-4 space-y-4 w-full h-72 bg">
-                  <motion.p
+                <div className="absolute bg-green-700 z-10 left-0.5 top-0.5 w-full h-64"></div>
+                <article className="border border-green-700 relative z-20 p-4 space-y-4 w-full h-64 bg">
+                  <motion.p 
                     className="text-6xl montserrat-black"
                     whileInView={{ opacity: 1 }}
                     initial={{ opacity: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: (index + 3) * 0.15 + 0.3 }}
+                    transition={{ delay: ((index + 3) * 0.15) + 0.3 }}
                   >
-                    <AnimatedStat
-                      stat={stat}
-                      duration={2.5 + (index + 3) * 0.2}
-                    />
+                    <AnimatedStat stat={stat} duration={2.5 + ((index + 3) * 0.2)} />
                   </motion.p>
-
-                  <motion.h3
+                  
+                  <motion.h3 
                     className="text-xl lg:text-2xl leading-tight montserrat-black relative z-20"
                     whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                    transition={{
-                      duration: 0.5,
-                      delay: (index + 3) * 0.15 + 0.4,
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: ((index + 3) * 0.15) + 0.4 
                     }}
                     viewport={{ once: true }}
                   >
                     {title}
                   </motion.h3>
-
-                  <motion.p
-                    className="leading-loose relative z-20 text-base lg:text-lg"
+                  
+                  <motion.p 
+                    className="leading-loose relative z-20"
                     whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                    transition={{
-                      duration: 0.5,
-                      delay: (index + 3) * 0.15 + 0.5,
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: ((index + 3) * 0.15) + 0.5 
                     }}
                     viewport={{ once: true }}
                   >

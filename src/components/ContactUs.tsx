@@ -56,10 +56,10 @@ const ContactUs = () => {
 
   return (
     <>
-      <section id="contact" className="p-8 lg:p-16 py-28 bg-green-700">
+      <section id="contact" className="px-8 lg:px-16 py-28 bg-green-700">
         <div className="relative">
-          <div className="w-full h-auto lg:h-[896px] bg-black absolute top-2 left-2 z-10"></div>
-          <div className="bg-green-100 h-auto lg:h-[896px] p-6 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
+          <div className="w-full h-auto lg:h-[796px] bg-black absolute top-2 left-2 z-10"></div>
+          <div className="bg-green-100 h-auto lg:h-[796px] p-6 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
             <h2 className="text-2xl lg:text-3xl xl:text-4xl text-center leading-tight montserrat-black">
               <span className="text-green-700">Ready to Revolutionize</span>{" "}
               Your Brand?
