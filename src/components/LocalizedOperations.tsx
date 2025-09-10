@@ -16,7 +16,7 @@ const LocalizedOperations = () => {
   ];
 
   return (
-    <section className="py-16 px-8 lg:px-16 xl:px-24 space-y-8 w-full">
+    <section id="operations" className="py-16 px-8 lg:px-16 xl:px-24 space-y-8 w-full">
       <h2 className="text-2xl lg:text-3xl xl:text-4xl leading-tight montserrat-black">
         Tailoring for Triumph:{" "}
         <span className="text-green-700">Localized Operations</span>

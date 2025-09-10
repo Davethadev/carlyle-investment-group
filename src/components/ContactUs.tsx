@@ -56,10 +56,10 @@ const ContactUs = () => {
 
   return (
     <>
-      <section id="contact" className="px-8 lg:px-16 py-28 bg-green-700">
-        <div className="relative">
-          <div className="w-full h-auto lg:h-[796px] bg-black absolute top-2 left-2 z-10"></div>
-          <div className="bg-green-100 h-auto lg:h-[796px] p-6 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
+      <section id="contact" className="px-8 lg:px-16 pt-28 pb-12 bg-green-700">
+        <div className="relative space-y-8">
+          <div className="w-full h-auto xl:h-[796px] bg-black absolute top-2 left-2 z-10"></div>
+          <div className="bg-green-100 h-auto xl:h-[796px] p-6 lg:p-16 mx-auto space-y-8 border border-black rounded-sm relative z-20">
             <h2 className="text-2xl lg:text-3xl xl:text-4xl text-center leading-tight montserrat-black">
               <span className="text-green-700">Ready to Revolutionize</span>{" "}
               Your Brand?
@@ -84,8 +84,8 @@ const ContactUs = () => {
                   {reasons.map((reason, index) => {
                     return (
                       <div key={index} className="relative">
-                        <div className="absolute bg-black z-10 left-0.5 top-0.5 w-full h-auto lg:h-28 rounded-sm"></div>
-                        <article className="border-2 border-black rounded-sm relative z-20 p-4 space-y-4 w-full h-auto lg:h-28 bg-green-100">
+                        <div className="absolute bg-black z-10 left-0.5 top-0.5 w-full h-auto xl:h-28 rounded-sm"></div>
+                        <article className="border-2 border-black rounded-sm relative z-20 p-4 space-y-4 w-full h-auto xl:h-28 bg-green-100">
                           <p className="leading-loose relative z-20 text-base lg:text-lg">
                             {reason}
                           </p>
@@ -119,6 +119,12 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
+          <a
+            href="mailto:info@carlyleinvestmentgroup.com"
+            className="w-full flex justify-center text-white"
+          >
+            info@carlyleinvestmentgroup.com
+          </a>
         </div>
       </section>
       <a

@@ -3,11 +3,11 @@ import { CircleCheck } from "lucide-react";
 
 const LicensingCompliance = () => {
   return (
-    <section className="py-16 px-8 lg:px-16 xl:px-24 mx-auto space-y-8">
+    <section id="compliance" className="py-16 px-8 lg:px-16 xl:px-24 mx-auto space-y-8">
       <h2 className="text-2xl lg:text-3xl xl:text-4xl leading-tight montserrat-black">
         <span className="text-green-700">Seamless</span> Licensing & Compliance
       </h2>
-      <div className="flex flex-col lg:flex-row gap-12">
+      <div className="flex flex-col xl:flex-row gap-12">
         <Image
           src={"/assets/images/compliance-2.jpeg"}
           alt=""

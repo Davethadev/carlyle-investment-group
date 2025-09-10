@@ -46,7 +46,7 @@ const Navbar = () => {
           <h2 className="uppercase montserrat-black relative z-20 tracking-widest leading-none">
             Carlyle
           </h2>
-          <p className="uppercase montserrat-regular text-xs relative z-20 tracking-widest">
+          <p className="uppercase montserrat-regular text-[11px] relative z-20 tracking-widest">
             Investment
           </p>
         </div>

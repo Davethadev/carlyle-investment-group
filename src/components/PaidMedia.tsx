@@ -103,7 +103,7 @@ const PaidMedia = () => {
   ];
 
   return (
-    <section className="py-16 px-8 lg:px-16 xl:px-24 mx-auto space-y-8">
+    <section id="marketing" className="py-16 px-8 lg:px-16 xl:px-24 mx-auto space-y-8">
       <motion.h2
         className="text-2xl lg:text-3xl xl:text-4xl text-center leading-tight montserrat-black"
         whileInView={{ opacity: [0, 1], y: [30, 0] }}
